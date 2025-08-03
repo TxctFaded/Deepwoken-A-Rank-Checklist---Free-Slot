@@ -12,6 +12,7 @@
 
     <!-- Total Echo Display -->
     <h2 style="color:white;">Total Echos: <span id="total">0</span></h2>
+    <button id="reset-btn" class="reset-button">Reset Checklist</button>
 
     <ul class="checklist">
         <li><input type="checkbox" data-echo="15" id="task1"><label for="task1">Power 20</label></li>
@@ -56,7 +57,7 @@
         checkboxes.forEach(cb => {
             cb.addEventListener('change', updateTotal);
         });
-        
+
     // Load saved state from localStorage
     function loadState() {
         let total = 0;
@@ -89,6 +90,19 @@
 
     // Load state when page loads
     loadState();
+
+    // Reset button functionality
+document.getElementById('reset-btn').addEventListener('click', () => {
+    // Uncheck all boxes
+    checkboxes.forEach(cb => {
+        cb.checked = false;
+        localStorage.removeItem(cb.id);
+    });
+
+    // Reset total
+    totalDisplay.textContent = 0;
+});
+
     </script>
 
     <!-- Discord Icon Link -->
@@ -99,4 +113,3 @@
 
 </body>
 </html>
-
