@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepwoken Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+
+    <h1><span style="color:rgb(85, 161, 85)">A</span> Rank Checklist</h1>
+
+    <!-- Total Echo Display -->
+    <h2 style="color:white;">Total Echos: <span id="total">0</span></h2>
+
+    <ul class="checklist">
+        <li><input type="checkbox" data-echo="15" id="task1"><label for="task1">Power 20</label></li>
+        <li><input type="checkbox" data-echo="1" id="task2"><label for="task2">Cooked a Meal</label></li>
+        <li><input type="checkbox" data-echo="1" id="task3"><label for="task3">Caught Fish</label></li>
+        <li><input type="checkbox" data-echo="1" id="task4"><label for="task4">Modified a Mantra</label></li>
+        <li><input type="checkbox" data-echo="1" id="task5"><label for="task5">Refining Pure Ore</label></li>
+        <li><input type="checkbox" data-echo="2" id="task6"><label for="task6">Crafted a Master Outfit</label></li>
+        <li><input type="checkbox" data-echo="2" id="task7"><label for="task7">Bargained with Shrines</label></li>
+        <li><input type="checkbox" data-echo="2" id="task8"><label for="task8">Consumed a Lotus Flask</label></li>
+        <li><input type="checkbox" data-echo="5" id="task9"><label for="task9">Unbound</label></li>
+        <li><input type="checkbox" data-echo="2" id="task10"><label for="task10">Bargained with Yun'Shul</label></li>
+        <li><input type="checkbox" data-echo="5" id="task11"><label for="task11">Traded with Laplace</label></li>
+        <li><input type="checkbox" data-echo="5" id="task12"><label for="task12">Oath</label></li>
+        <li><input type="checkbox" data-echo="5" id="task13"><label for="task13">Murmur</label></li>
+        <li><input type="checkbox" data-echo="5" id="task14"><label for="task14">Soulbound an Item</label></li>
+        <li><input type="checkbox" data-echo="5" id="task15"><label for="task15">Used Enchant Stone</label></li>
+        <li><input type="checkbox" data-echo="5" id="task16"><label for="task16">Used Pluripotent Alloy</label></li>
+        <li><input type="checkbox" data-echo="5" id="task17"><label for="task17">Obtained the Deepshore Fossil</label></li>
+        <li><input type="checkbox" data-echo="5" id="task18"><label for="task18">Defeated the Duke / Chaser</label></li>
+        <li><input type="checkbox" data-echo="5" id="task19"><label for="task19">Defeated Primadon</label></li>
+        <li><input type="checkbox" data-echo="5" id="task20"><label for="task20">Defeated the Dread Serpent</label></li>
+        <li><input type="checkbox" data-echo="5" id="task21"><label for="task21">Defeated the Ferryman</label></li>
+        <li><input type="checkbox" data-echo="10" id="task22"><label for="task22">Defeated Scion of Ethiron</label></li>
+        <li><input type="checkbox" data-echo="15" id="task23"><label for="task23">Resonance</label></li>
+    </ul>
+
+    <script>
+        const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+        const totalDisplay = document.getElementById('total');
+
+        function updateTotal() {
+            let total = 0;
+            checkboxes.forEach(cb => {
+                if (cb.checked) {
+                    total += parseInt(cb.getAttribute('data-echo'));
+                }
+            });
+            totalDisplay.textContent = total;
+        }
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', updateTotal);
+        });
+    </script>
+
+    <!-- Discord Icon Link -->
+<a href="http://discordapp.com/users/916777317945212999" target="_blank" class="discord-link">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord" class="discord-icon">
+</a>
+
+
+</body>
+</html>

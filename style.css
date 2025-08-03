@@ -1,0 +1,109 @@
+html {
+    min-height: 100%;
+}
+
+.discord-link {
+    position: fixed;
+    bottom: 15px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.discord-icon {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1); /* makes it white */
+    opacity: 0.8;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+}
+
+.discord-icon:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    filter: brightness(0.8) sepia(1) saturate(3) hue-rotate(90deg); /* muted green tint */
+}
+
+body {
+    text-align: center;
+    background: linear-gradient(#0d1a0f, #0a1410, #050807); /* deep muted green-black */
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: flex-start;
+    font-family: 'Cinzel', serif; /* classic fantasy font */
+    color: #d8d1b1; /* parchment-like text */
+}
+
+/* Title styling */
+h1 {
+    font-size: 2.8rem;
+    letter-spacing: 1.5px;
+    color: #c7bea2;
+    margin-top: 30px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: #c7bea2;
+}
+
+/* Checklist container */
+.checklist {
+    background: rgba(15, 20, 15, 0.85); /* semi-transparent dark */
+    border: 1px solid rgba(120, 100, 60, 0.4); /* weathered bronze-like border */
+    border-radius: 8px;
+    padding: 25px 40px;
+    margin-top: 20px;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.6);
+    list-style: none;
+}
+
+/* Checklist items */
+.checklist li {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+    font-size: 1.05rem;
+}
+
+/* Custom checkbox style */
+.checklist input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #8a7f66; /* muted bronze */
+    border-radius: 3px;
+    background-color: transparent;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.checklist input[type="checkbox"]:hover {
+    border-color: #b6a682;
+}
+
+.checklist input[type="checkbox"]:checked {
+    background-color: #7a6d4b; /* muted brown check */
+    border-color: #b6a682;
+}
+
+/* Checked label style */
+.checklist input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: #a49a85; /* faded parchment */
+}
+
+/* Label hover effect */
+.checklist label {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.checklist label:hover {
+    color: #e0d8b5; /* slightly brighter parchment */
+}
