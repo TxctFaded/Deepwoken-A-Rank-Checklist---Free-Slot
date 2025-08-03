@@ -56,6 +56,39 @@
         checkboxes.forEach(cb => {
             cb.addEventListener('change', updateTotal);
         });
+        
+    // Load saved state from localStorage
+    function loadState() {
+        let total = 0;
+        checkboxes.forEach(cb => {
+            const saved = localStorage.getItem(cb.id);
+            if (saved === "true") {
+                cb.checked = true;
+                total += parseInt(cb.getAttribute('data-echo'));
+            }
+        });
+        totalDisplay.textContent = total;
+    }
+
+    // Save state when a checkbox changes
+    function updateState() {
+        let total = 0;
+        checkboxes.forEach(cb => {
+            localStorage.setItem(cb.id, cb.checked);
+            if (cb.checked) {
+                total += parseInt(cb.getAttribute('data-echo'));
+            }
+        });
+        totalDisplay.textContent = total;
+    }
+
+    // Listen for changes
+    checkboxes.forEach(cb => {
+        cb.addEventListener('change', updateState);
+    });
+
+    // Load state when page loads
+    loadState();
     </script>
 
     <!-- Discord Icon Link -->
@@ -66,3 +99,4 @@
 
 </body>
 </html>
+
