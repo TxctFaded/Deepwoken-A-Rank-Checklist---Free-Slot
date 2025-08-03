@@ -107,3 +107,20 @@ h2 {
 .checklist label:hover {
     color: #e0d8b5; /* slightly brighter parchment */
 }
+
+.reset-button {
+    background-color: #3a5a40; /* Deep green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.reset-button:hover {
+    background-color: #2b4530; /* Darker green on hover */
+}
